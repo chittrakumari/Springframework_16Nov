@@ -1,12 +1,24 @@
 package org.example;
 
-import java.beans.ConstructorProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
+import java.beans.ConstructorProperties;
+@Component
 public class Alien {
 
+    @Value("21")
     private int age;
+
+    @Autowired
+    @Qualifier("laptop")
     private Computer com;
 
+    public Alien() {
+        System.out.println("Alien object created");
+    }
 
     public int getAge() {
         return age;
@@ -24,11 +36,9 @@ public class Alien {
         this.age = age;
     }
 
-    Alien(){
-        System.out.println("Object Created");
-    }
+
     public void code(){
 //        System.out.println("Hello from alien");
-        com.laptopCode();
+        System.out.println("From alien class");
     }
 }
