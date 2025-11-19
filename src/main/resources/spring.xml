@@ -4,7 +4,15 @@
        xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="alien" class="org.example.Alien">
+    <bean id="alien" class="org.example.Alien" autowire="byType">
+<!--      <constructor-arg name="lap" ref="lap1" />-->
+<!--        <constructor-arg name="age" value="21"/>-->
+<!--        <property name="com" ref="com"/>-->
+<!--        <property name="com" ref="com1"/>-->
+    </bean>
+    <bean id="com" class="org.example.Laptop" primary="true">
+    </bean>
+    <bean id="com1" class="org.example.Desktop">
 
     </bean>
 </beans>
